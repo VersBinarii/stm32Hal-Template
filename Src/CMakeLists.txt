@@ -31,3 +31,4 @@ target_link_libraries(${ELF_FILE} PRIVATE ${LINKER_FLAGS})
 
 # Link it according to our custom linker file
 target_link_libraries(${ELF_FILE} PUBLIC -T${LINKER_SCRIPT})
+add_custom_command(TARGET ${ELF_FILE} POST_BUILD COMMAND arm-none-eabi-size ${ELF_FILE})
