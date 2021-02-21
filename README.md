@@ -8,9 +8,18 @@ You need to have CMake on your system.
 
 Clone the repo.
 
-Edit the CMLists.txt in the project root to specify the device used.
+Edit the CMakeLists.txt in the project root to specify the device used.
+
+Adjust the linker file content if needed. Sections should be ok for most chips
+however the FLASH and SRAM values will need adjustment.
+
+Copy the correct startup file from the startup directory into the Src directory. 
 
 Run the build script:
-'''
+
+``` bash
 ./build.sh
-'''
+```
+
+The script will run CMake and create the link to the compile_commands.json
+file in the project root. This file is helpful when using the CCLS. 
