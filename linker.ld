@@ -22,11 +22,17 @@ SECTIONS
 		. = ALIGN(4);
 		*(.text)
 		*(.text.*)
-		*(.init)
-		*(.fini)
-		*(.rodata)
-		*(.rodata.*)
+		KEEP(*(.init))
+		KEEP(*(.fini))
 		. = ALIGN(4);
+	} >FLASH
+
+	.rodata :
+	{
+		. = ALIGN(4);
+    		*(.rodata)
+    		*(.rodata*)
+    		. = ALIGN(4);
 	} >FLASH
 
 	_sidata = LOADADDR(.data);
