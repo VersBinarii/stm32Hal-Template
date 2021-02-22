@@ -43,6 +43,13 @@ set(HSE_VALUE 8000000)
 # You might need to adjust the memory regions as needed
 get_filename_component(LINKER_SCRIPT linker.ld ABSOLUTE)
 
+
+# Set openocd target interface
+set(OPENOCD_INTERFACE stlink-v2)
+
+# and target
+set(OPENOCD_TARGET stm32f4x)
+
 # This is where HAL is build into a library
 add_subdirectory(Lib)
 
